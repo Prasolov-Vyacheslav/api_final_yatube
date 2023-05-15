@@ -50,7 +50,7 @@ python manage.py runserver
 }
 ### Документция ReDoc
 ```
-https://redocly.github.io/redoc/
+http://localhost:8000/redoc/
 ```
 ### Авторы
 Прасолов Вячеслав

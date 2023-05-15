@@ -25,6 +25,9 @@ class Group(models.Model):
         help_text='Укажите описание группы.'
     )
 
+    class Meta:
+        ordering = ('title',)
+
     def __str__(self):
         return self.title
 
@@ -61,6 +64,9 @@ class Post(models.Model):
         help_text='Выберите группу'
     )
 
+    class Meta:
+        ordering = ('pub_date',)
+
     def __str__(self):
         """Вывод поста по текстовой строке"""
         return self.text
@@ -90,6 +96,9 @@ class Comment(models.Model):
         db_index=True
     )
 
+    class Meta:
+        ordering = ('created',)
+
 
 class Follow(models.Model):
     """Модель для подписки"""
@@ -113,3 +122,4 @@ class Follow(models.Model):
                 name='unique_follow'
             )
         ]
+        ordering = ('user', 'following')
